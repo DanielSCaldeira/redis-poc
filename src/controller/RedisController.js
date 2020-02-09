@@ -1,4 +1,3 @@
-const redisInfo = require('redis-info');
 const service = require('../service/ServiceBase');
 const asyncRedisClient = require('../config/redisClient');
 
@@ -40,7 +39,7 @@ class RedisController {
   }
 
   Info(_, res) {
-    asyncRedisClient.info((err, config) => res.json(redisInfo.parse(config)));
+    service(asyncRedisClient).Info(res);
   }
 }
 

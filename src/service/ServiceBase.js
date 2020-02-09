@@ -1,4 +1,5 @@
 /* eslint-disable no-return-await */
+const redisInfo = require('redis-info');
 
 const behavior = {
   0: async () => {
@@ -37,5 +38,9 @@ module.exports = client => ({
   Excluir: async chave => {
     const e = await client.exists(chave);
     return behavior[e](client, chave);
+  },
+
+  Info: res => {
+    client.info((err, config) => res.json(redisInfo.parse(config)));
   },
 });
