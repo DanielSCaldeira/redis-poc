@@ -1,0 +1,10 @@
+intalar o pm2 global 
+pm2 start 
+monitorar back end
+pm2 kill -> mata a instancia
+pm2 restart -> restar da aplicação
+pm2 status
+pm2 show 0
+pm2 restar 0
+pm2 restar "nome aplicacao"
+pm2 delete 
