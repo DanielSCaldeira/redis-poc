@@ -31,7 +31,6 @@ module.exports = client => ({
 
   ExcluirChaves: async () => {
     const resultado = await client.flushdb();
-    console.log(resultado);
     return resultado === 'OK';
   },
 

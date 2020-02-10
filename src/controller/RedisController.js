@@ -20,7 +20,6 @@ class RedisController {
   }
 
   async Inserir(req, res) {
-    console.log(req.query);
     const resultado = await service(asyncRedisClient).Inserir(
       req.query.chave,
       req.query.valor
